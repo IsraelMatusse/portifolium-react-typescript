@@ -1,0 +1,9 @@
+#form{
+    width: 600px;
+    height: 600px;
+}
+#form label{
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    
+}
