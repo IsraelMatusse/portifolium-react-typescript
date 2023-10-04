@@ -1,0 +1,24 @@
+footer {
+    background-color:rgb(65, 90, 90);
+    padding: 10px;
+    color: white;
+    height: 300px;
+    position: relative;
+
+  }
+footer h1 p{
+    position: absolute;
+    right: 200px;
+}
+.button{
+    background-color: rgb(197, 197, 223);
+    height: 80px;
+    width: 200px;
+    color: black;
+
+
+}
+    .copyright {
+    color: #333;
+    font-size: 14px;
+  }

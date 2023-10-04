@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Contact from './components/Contact.tsx'
+import Contact from './pages/Contact.tsx'
 
 
 import Home from './pages/home.tsx';
@@ -14,24 +14,11 @@ const router= createBrowserRouter(
       path:"/",
       element:<App/>,
       errorElement:<NotFoundPage/>,
-      children:[
-        {
-          path:"/",
-          element:<Contact/>,
-        },
-        {
-          path:"contact",
-          element:<Home/>,
-        },
-        {
-          path:"experience",
-          element:<Home/>,
-        },
-        {
-          path:"formation",
-          element:<Home/>,
-        },
-      ],
+    },
+    {
+        path:"contact",
+        element:<Contact/>,
+      
     },
   ]
 );

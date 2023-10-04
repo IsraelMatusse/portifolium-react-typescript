@@ -3,6 +3,10 @@
     padding: 10px;
     display: flex; 
     justify-content: flex-end; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 
   #navBar ul{
@@ -21,5 +25,5 @@
   
 
   #navBar a:hover {
-    color: #ff0;
+    color: rgb(70, 70, 223);;
   }
