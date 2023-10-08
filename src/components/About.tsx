@@ -2,11 +2,11 @@ import "../styles/about.css"
 const About=()=>{
     return(
         <div className="about">
-        <h2>Hello, and Welcome!</h2>
         <p>
-          I pursued my education in Engineering of Technologies and Information Systems, an enriching journey that laid the foundation for my current professional endeavors. <br />
-           During my time at university, I delved into a diverse array of subjects, including Java, C#, PHP, JavaScript, CSS, HTML, and Spring Boot. <br />
-           This exposure equipped me with a robust skill set and a passion for software development.
+         My Name Is Israel Mateus Matusse and I'm 22 years Old and passionated with software development <br />
+         My jpurney as developer started at University where i could learn the basics of programming and get exposed too different progrramming languages <br />
+         as C#, Java, Javascript, php, css and Html <br />
+         I'm graduated in Engeinering of technologies and information systems.
         </p>
         <p>
           After graduating, I transitioned into the professional sphere, where I am currently engaged in the dynamic field of technology. <br />

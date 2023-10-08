@@ -2,7 +2,7 @@ import React from "react";
 import Texto from "../components/Texto";
 import NavBar from "../components/NavBar";
 import Contact from "./Contact";
-import Footer from "../components/Footer";
+import FooterComponent from "../components/Footer";
 import About from "../components/About";
 const Home=()=>{
     return(
@@ -10,7 +10,7 @@ const Home=()=>{
             <Texto/>
             <NavBar/>
             <About />
-            <Footer />
+            <FooterComponent />
         </div>
            
         )
