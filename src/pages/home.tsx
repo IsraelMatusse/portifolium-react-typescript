@@ -7,7 +7,7 @@ import About from "../components/About";
 const Home=()=>{
     return(
         <div>
-            <Texto/>
+            
             <NavBar/>
             <About />
             <FooterComponent />

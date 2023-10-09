@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Contact from './pages/Contact.tsx'
+import Blog from './pages/Blog.tsx'
 
 
 import Home from './pages/home.tsx';
@@ -14,12 +15,20 @@ const router= createBrowserRouter(
       path:"/",
       element:<App/>,
       errorElement:<NotFoundPage/>,
+      children:[
+        
+      ]
     },
     {
         path:"contact",
         element:<Contact/>,
       
     },
+    {
+      path:"blog",
+      element:<Blog/>,
+    
+  },
   ]
 );
 

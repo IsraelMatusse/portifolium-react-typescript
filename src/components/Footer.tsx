@@ -1,7 +1,7 @@
 'use client';
 
 import { Footer } from 'flowbite-react';
-import { BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { BsFacebook, BsGithub, BsInstagram, BsTwitter, BsLinkedin } from 'react-icons/bs';
 
 export default function FooterComponent() {
   return (
@@ -23,7 +23,12 @@ export default function FooterComponent() {
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon
               href="#"
-              icon={BsFacebook}
+              icon={BsLinkedin}
+            />
+            <Footer.Icon
+              href="#"
+              icon={BsGithub}
+              
             />
             <Footer.Icon
               href="#"
@@ -33,12 +38,10 @@ export default function FooterComponent() {
               href="#"
               icon={BsTwitter}
             />
-            <Footer.Icon
-              href="#"
-              icon={BsGithub}
-            />
+            
         
           </div>
+          
         </div>
       </div>
     </Footer>

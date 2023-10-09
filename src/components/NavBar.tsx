@@ -6,9 +6,9 @@ const NavBar=()=>{
         <div id="navBar">
                 <ul>
                 <li> <NavLink to={"/"} >Home </NavLink>  </li>
-                    <li> <a href=""> Formation </a> </li>
-                    <li> <a href="">Experience</a>  </li>
+                    <li> <Link to={"blog"} >Blog </Link>  </li>
                     <li> <Link to={"contact"} >Contact </Link>  </li>
+                    <li> <Link to={"contact"} >About </Link>  </li>
                 </ul>
         </div>
     );

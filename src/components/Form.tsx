@@ -7,7 +7,7 @@ import { Button, Checkbox, Label, TextInput, Textarea } from 'flowbite-react';
 export default function Form() {
   return (
  <div>
-     <h2 id="text">Want to Hire me or colaborare? reach me hire</h2>
+     <h2 id="text" className="text-3xl font-bold mb-4 text-blue-500">Want to Hire me or colaborare? <br /> reach me hire</h2>
 
 <div id="formulario"> 
     <form className="flex max-w-md flex-col gap-4">
