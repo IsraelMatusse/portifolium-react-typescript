@@ -1,5 +1,7 @@
-export interface ListPosts{
-    id:number,
-    designacao:string,
-    texto:string
+export interface Post{
+    userId: number,
+    id: number,
+    title: string,
+    completed: boolean
+    body:string
 }
