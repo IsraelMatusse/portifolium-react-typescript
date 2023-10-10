@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import { ListPosts } from "../models/ListPosts";
 import axios from "axios";
 export default function ListPosts() {
-  const [listPosts, setListPost]=useState<ListPosts[]>([]);
+  const [listPost, setListPost]=useState<ListPosts[]>([]);
 
-  const getListPosts =()=>{
+  const getListPost =()=>{
     axios.
     get(``)
     .then((res:any)=>{
@@ -19,7 +19,7 @@ export default function ListPosts() {
   }
 
   useEffect(()=>{
-    getListPosts()
+    getListPost()
   })
 
 
@@ -42,8 +42,6 @@ export default function ListPosts() {
     </ListGroup>
    </div>
     </div>
-
-  
   )
 }
 
