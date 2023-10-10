@@ -1,30 +1,30 @@
 'use client';
 import "../styles/listposts.css";
-import { ListGroup } from 'flowbite-react';
+//import { ListGroup } from 'flowbite-react';
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Post } from "../models/ListPosts";
-import { API_ENDPOINTS } from "../data/endpoint";
-import { Province } from "../models/Province";
+//import { API_ENDPOINTS } from "../data/endpoint";
+//import { Province } from "../models/Province";
 export default function ListPosts() {
  const [posts, setPosts]=useState<Post[]>([]);
- const [provinces, setProvinces]=useState<Province[]>([])
+//const [provinces, setProvinces]=useState<Province[]>([])
 
   const getPosts = async()=>{
     try{
       const response=await axios.get("https://jsonplaceholder.typicode.com/posts");
       const data=response.data;
       setPosts(data);
-      console.log(data);
+      console.log(response);
     }catch(err){
       console.log(err)
     }
    
   }
 
-  const getProvinces= async()=>{
+  /*const getProvinces= async()=>{
     try{
       const response=await
       axios.get("http://localhost:8086/api/provinces");
@@ -35,10 +35,11 @@ export default function ListPosts() {
       console.log(err);
     }
   }
+  */
 
   useEffect(()=>{
     getPosts()
-    getProvinces()
+   // getProvinces()
   }, [])
   
   return (

@@ -2,7 +2,7 @@ import "../styles/form.css"
 import FooterComponent from "./Footer";
 'use client';
 
-import { Button, Checkbox, Label, TextInput, Textarea } from 'flowbite-react';
+import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 
 export default function Form() {
   return (
