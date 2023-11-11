@@ -22,20 +22,16 @@ export default function FooterComponent() {
           />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon
-              href="#"
+              href="https://www.linkedin.com/in/israel-matusse-0828a3239/"
               icon={BsLinkedin}
             />
             <Footer.Icon
-              href="#"
+              href="https://github.com/IsraelMatusse"
               icon={BsGithub}
               
             />
             <Footer.Icon
-              href="#"
-              icon={BsInstagram}
-            />
-            <Footer.Icon
-              href="#"
+              href="https://twitter.com/Israel_matusse"
               icon={BsTwitter}
             />
             
