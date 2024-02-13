@@ -7,7 +7,7 @@ import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 export default function Form() {
   return (
  <div>
-     <h2 id="text" className="text-3xl font-bold mb-4 text-blue-500">Want to Hire me or colaborate? <br /> reach me hire</h2>
+     <h2 id="text" className="text-3xl font-bold mb-4 text-blue-500">Want To Hire me or Colaborate? <br /> Reach me hire</h2>
 
 <div id="formulario"> 
     <form className="flex max-w-md flex-col gap-4">
@@ -22,7 +22,7 @@ export default function Form() {
           id="email1"
           placeholder="name@yourname.com"
           required
-          type="email"
+          type="Email"
         />
       </div>
       <div>
