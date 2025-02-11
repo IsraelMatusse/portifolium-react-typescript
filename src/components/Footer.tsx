@@ -1,5 +1,3 @@
-'use client';
-import type React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 export default function Footer() {
   const currentYear = new Date().getFullYear();

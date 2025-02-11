@@ -31,7 +31,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onClose }) => {
               id="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-vibrant-purple focus:ring focus:ring-vibrant-purple focus:ring-opacity-50"
+              className=" border-black mt-1 block w-full rounded-md  shadow-sm focus:border-vibrant-purple focus:ring focus:ring-vibrant-purple focus:ring-opacity-50 "
               required
             />
           </div>
