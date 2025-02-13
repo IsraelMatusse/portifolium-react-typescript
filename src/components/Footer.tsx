@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="mb-4 md:mb-0">
-            &copy; {currentYear} @IsraelMatusse. Todos os direitos reservados.
+            &copy; {currentYear} @IsraelMatusse. All Rights Reserveds.
           </p>
           <div className="flex space-x-4">
             <a
