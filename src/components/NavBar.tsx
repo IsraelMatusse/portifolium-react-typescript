@@ -1,70 +1,17 @@
-import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { motion } from "framer-motion";
-const navItems = [
-  { name: "Início", path: "/" },
-  { name: "Experience", path: "/#experience" },
-  { name: "Skills", path: "/#skills" },
-  { name: "Education", path: "/#education" },
-  { name: "Projects", path: "/#projects" },
-  { name: "Articles", path: "/articles" },
-];
+import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
-  const location = useLocation();
-  const pathname = location.pathname;
-  const [isOpen, setIsOpen] = useState(false);
+type NavLinksProps = {
+  pathname: string;
+  setIsOpen: (value: boolean) => void;
+};
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <RouterLink
-            className="text-3xl font-bold bg-gradient-to-r from-vibrant-blue to-vibrant-purple bg-clip-text text-transparent"
-            to={"/"}
-          >
-            Israel Matusse
-          </RouterLink>
-
-          {/* Botão Menu Mobile */}
-          <button
-            className="md:hidden block text-gray-600 focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-
-          {/* Navbar - Desktop */}
-          <ul className="hidden md:flex space-x-6">
-            {navLinks(pathname, setIsOpen)}
-          </ul>
-        </div>
-
-        {/* Navbar - Mobile (Dropdown) */}
-        {isOpen && (
-          <div className="md:hidden bg-white shadow-md absolute left-0 right-0 top-[70px] z-40 p-4">
-            <ul className="flex flex-col space-y-4">
-              {navLinks(pathname, setIsOpen)}
-            </ul>
-          </div>
-        )}
-      </div>
-    </nav>
-  );
-}
-
-function navLinks(
-  pathname: string,
-  setIsOpen: {
-    (value: SetStateAction<boolean>): void;
-    (value: SetStateAction<boolean>): void;
-    (arg0: boolean): void;
-  }
-) {
+const NavLinks = ({ pathname, setIsOpen }: NavLinksProps) => {
+  const ScrollLinkComponent = ScrollLink as any;
   return (
     <>
       <li>
@@ -75,7 +22,7 @@ function navLinks(
               : "text-gray-600 hover:text-vibrant-blue"
           }`}
           to={"/"}
-          onClick={() => setIsOpen(false)} // Fecha o menu mobile ao clicar
+          onClick={() => setIsOpen(false)}
         >
           Home
           {pathname === "/" && (
@@ -88,7 +35,7 @@ function navLinks(
       </li>
 
       <li>
-        <ScrollLink
+        <ScrollLinkComponent
           to="experience"
           smooth={true}
           duration={500}
@@ -96,11 +43,11 @@ function navLinks(
           onClick={() => setIsOpen(false)}
         >
           Experience
-        </ScrollLink>
+        </ScrollLinkComponent>
       </li>
 
       <li>
-        <ScrollLink
+        <ScrollLinkComponent
           to="skills"
           smooth={true}
           duration={500}
@@ -108,11 +55,11 @@ function navLinks(
           onClick={() => setIsOpen(false)}
         >
           Skills
-        </ScrollLink>
+        </ScrollLinkComponent>
       </li>
 
       <li>
-        <ScrollLink
+        <ScrollLinkComponent
           to="education"
           smooth={true}
           duration={500}
@@ -120,11 +67,11 @@ function navLinks(
           onClick={() => setIsOpen(false)}
         >
           Formation
-        </ScrollLink>
+        </ScrollLinkComponent>
       </li>
 
       <li>
-        <ScrollLink
+        <ScrollLinkComponent
           to="projects"
           smooth={true}
           duration={500}
@@ -132,7 +79,7 @@ function navLinks(
           onClick={() => setIsOpen(false)}
         >
           Projects
-        </ScrollLink>
+        </ScrollLinkComponent>
       </li>
 
       <li>
@@ -155,5 +102,45 @@ function navLinks(
         </RouterLink>
       </li>
     </>
+  );
+};
+
+export default function Navbar() {
+  const location = useLocation();
+  const pathname = location.pathname;
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center py-4">
+          <RouterLink
+            className="text-3xl font-bold bg-gradient-to-r from-vibrant-blue to-vibrant-purple bg-clip-text text-transparent"
+            to={"/"}
+          >
+            Israel Matusse
+          </RouterLink>
+
+          <button
+            className="md:hidden block text-gray-600 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          <ul className="hidden md:flex space-x-6">
+            <NavLinks pathname={pathname} setIsOpen={setIsOpen} />
+          </ul>
+        </div>
+
+        {isOpen && (
+          <div className="md:hidden bg-white shadow-md absolute left-0 right-0 top-[70px] z-40 p-4">
+            <ul className="flex flex-col space-y-4">
+              <NavLinks pathname={pathname} setIsOpen={setIsOpen} />
+            </ul>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 }
