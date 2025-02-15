@@ -17,12 +17,33 @@ export default function Projects() {
     },
     {
       name: "THIKITHI APP",
-      description:
-        "Aplicação de venda de Bilhetes Online de forma fácil e segura",
+      description: "Application for selling Online Tickets easily and securely",
       technologies: "Node.js, React",
       link: "https://thikiti-app.vercel.app/",
     },
-    // Adicione mais projetos conforme necessário
+
+    {
+      name: "SPRING CLOUD GATEWAY SERVICE",
+      description:
+        "Application that implements the spring cloud gateway library for routing services in a microservices environment. In which it has centralized configuration of retry, caching, rate limit and other mechanisms ",
+      technologies: "Java, Srpring boot",
+      link: "https://github.com/IsraelMatusse/GATEWAY-SERVICE-SPRING",
+    },
+
+    {
+      name: "PICPAY CHALLENGE",
+      description:
+        "Application that simulates a payment system with the ability to create, process, cancel payments and send notifications, using the picpay api",
+      technologies: "PHP, Laravel",
+      link: "https://github.com/IsraelMatusse/desafio-picpay-backend-laravel",
+    },
+    {
+      name: "NOTIFICATIONS SERVICE",
+      description:
+        "Service for issuing notifications to application users (email, SMS and others), developed to be used by applications in managing notifications where anyone who wants to join receives an API key and implements the application based on the documentation provided",
+      technologies: "Java, Spring boot",
+      link: "https://github.com/IsraelMatusse/NOTIFICATIONS_SERVICE",
+    },
   ];
 
   return (
