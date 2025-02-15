@@ -3,13 +3,12 @@ import { motion } from "framer-motion";
 export default function Education() {
   const educations = [
     {
-      degree:
-        "Licenciatura em Engenharia de tecnologias e sistemas de informação",
+      degree: "Degree in Engineering of Technologies and Information Systems",
       institution: "Universidade Joaquim Chissano",
       year: "2023",
     },
     {
-      degree: "Mecânica de Manutenção Industrial",
+      degree: "Industrial Maintenance Mechanics",
       institution:
         "Instituto de Formação Profissional e Estudos laborais Alberto Cassimo",
       year: "2018",
@@ -17,9 +16,9 @@ export default function Education() {
   ];
 
   return (
-    <section id="projects" className="py-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-10 text-center text-vibrant-purple">
+    <section id="projects" className="py-2">
+      <div className="container mx-auto px-4 ">
+        <h2 className="text-3xl font-bold mb-6 text-center text-vibrant-blue">
           Academic Formation
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

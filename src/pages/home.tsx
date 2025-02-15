@@ -1,17 +1,15 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import ContactForm from '../components/ContactForm';
-import Experience from '../components/Experience';
-import Projects from '../components/Projects';
-import Navbar from '../components/NavBar';
-import Footer from '../components/Footer';
-import Education from '../components/Education';
+import { motion } from "framer-motion";
+import Experience from "../components/Experience";
+import Projects from "../components/Projects";
+import Navbar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Education from "../components/Education";
+import { Link } from "react-router-dom";
+import { Skills } from "../components/Skills";
 
 export default function Home() {
-  const [showContactForm, setShowContactForm] = useState<boolean>(false);
-
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 bg-gray-100">
       <Navbar />
 
       {/* Hero Section */}
@@ -26,45 +24,43 @@ export default function Home() {
               Hello World <br /> I'm Israel Matusse
             </h1>
             <p className="text-xl mb-6">
-              A young man with a passion for solving everyday problems and driving improvements in
-              the quality of life through technology. I have a curious and innovative mindset,
-              always seeking creative and disruptive approaches to complex challenges. I am
-              constantly looking for new opportunities for learning and professional growth,
-              motivated to become a visionary leader in the technology sector. I am able to work
-              collaboratively in multidisciplinary teams, encouraging the exchange of ideas and
-              driving transformative solutions. I have experience using technologies such as java,
-              spring boot, typescript, node js, react, relational and non-relational databases,
-              application redesign and business process modeling.
+              A young man with a passion for solving everyday problems and
+              driving improvements in the quality of life through technology. I
+              have a curious and innovative mindset, always seeking creative and
+              disruptive approaches to complex challenges. I am constantly
+              looking for new opportunities for learning and professional
+              growth, motivated to become a visionary leader in the technology
+              sector. I am able to work collaboratively in multidisciplinary
+              teams, encouraging the exchange of ideas and driving
+              transformative solutions. I have experience using technologies
+              such as java, spring boot, typescript, node js, react, relational
+              and non-relational databases, application redesign and business
+              process modeling.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-vibrant-purple px-6 py-2 rounded-full font-semibold"
-              onClick={() => setShowContactForm(true)}
+            <Link
+              to="/contact"
+              className="bg-white text-vibrant-purple px-6 py-2 rounded-full font-semibold inline-block"
             >
-              Get in Touch
-            </motion.button>
+              Get In Touch
+            </Link>
           </motion.div>
         </div>
       </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-100">
+      <section id="experience" className="py-10 ">
         <Experience />
       </section>
 
-      <section id="education" className="py-20">
+      <section id="skills" className="py-10 ">
+        <Skills />
+      </section>
+      <section id="education" className="py-10 ">
         <Education />
       </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-10 ">
         <Projects />
       </section>
 
       <Footer />
-
-      {showContactForm && <ContactForm onClose={() => setShowContactForm(false)} />}
     </div>
   );
 }

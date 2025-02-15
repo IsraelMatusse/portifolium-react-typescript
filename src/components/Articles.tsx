@@ -30,14 +30,14 @@ const articles: Article[] = [
 
 export default function Articles() {
   return (
-    <div className="bg-gradient-to-br from-vibrant-blue to-vibrant-purple text-white py-20">
+    <div className="bg-gray-100 text-black py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold mb-8 text-white">
+          <h1 className="text-4xl font-bold mb-6 text-center text-vibrant-blue">
             Published Articles
           </h1>
           <div className="grid gap-6">

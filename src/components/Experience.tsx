@@ -7,7 +7,7 @@ export default function Experience() {
       role: "Programmer Analyst",
       period: " Maio de 2023 - Presente",
       description:
-        "I currently work as a programmer analyst. implementing everything from business process modeling to solution development     I have experience in developing web services using architectures such as REST and GRAPHQL.      and work in a microservices environment ",
+        "I currently work as a programmer analyst. participating from business process modeling to solution development.    I have experience in developing web services using architectures such as REST and GRAPHQL.      and work in a microservices environment ",
     },
     {
       company: "FASOREL SA",
@@ -22,7 +22,7 @@ export default function Experience() {
       role: "Technical Production Operator",
       period: "September 2022",
       description:
-        "I worked as an industrial mechanic. ensuring the operation of industrial equipment in the organization's functional units, such as: food oil refinery, soap plant, bottle, filling plant, oil acid plant and others.",
+        "I worked as a technical production operator at the biscuit factory. Where it guaranteed the full functioning of equipment such as packaging machines, ovens, industrial mixers and other equipment. carrying out periodic and corrective maintenance.",
     },
     {
       company: "STARTIMES",
@@ -41,9 +41,9 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-10">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-10 text-center text-vibrant-blue">
+    <section id="experience" className="py-2">
+      <div className="container mx-auto px-4 ">
+        <h2 className="text-3xl font-bold mb-6 text-center text-vibrant-blue">
           Professional Experience
         </h2>
         <div className="relative">
