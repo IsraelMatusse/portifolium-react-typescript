@@ -16,6 +16,12 @@ export default function Projects() {
       link: "https://pfuna-makwero.vercel.app/",
     },
     {
+      name: "GOVERNMENT PROJECTS MONITOR",
+      description: "Application for monitoring government projects, where public can comment and rate public projects",
+      technologies: "Node.js, Express, Next, TypeScript, PostGresSQL",
+      link: "https://govprojectsmonitor-mz.vercel.app/",
+    },
+    {
       name: "THIKITHI APP",
       description: "Application for selling Online Tickets easily and securely",
       technologies: "Node.js, React",
@@ -28,14 +34,6 @@ export default function Projects() {
         "Application that implements the spring cloud gateway library for routing services in a microservices environment. In which it has centralized configuration of retry, caching, rate limit and other mechanisms ",
       technologies: "Java, Srpring boot",
       link: "https://github.com/IsraelMatusse/GATEWAY-SERVICE-SPRING",
-    },
-
-    {
-      name: "PICPAY CHALLENGE",
-      description:
-        "Application that simulates a payment system with the ability to create, process, cancel payments and send notifications, using the picpay api",
-      technologies: "PHP, Laravel",
-      link: "https://github.com/IsraelMatusse/desafio-picpay-backend-laravel",
     },
     {
       name: "NOTIFICATIONS SERVICE",
