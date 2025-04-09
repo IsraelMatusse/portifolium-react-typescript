@@ -12,7 +12,6 @@ export default function Home() {
     <div className="min-h-screen pt-16 bg-gray-100">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-vibrant-blue to-vibrant-purple text-white py-20">
         <div className="container mx-auto px-4">
           <motion.div

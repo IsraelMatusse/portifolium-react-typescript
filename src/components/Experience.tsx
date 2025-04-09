@@ -5,9 +5,9 @@ export default function Experience() {
     {
       company: "NETLINE SERV",
       role: "Programmer Analyst",
-      period: " Maio de 2023 - Presente",
+      period: " February 2023 - Presente",
       description:
-        "I currently work as a programmer analyst. participating from business process modeling to solution development.    I have experience in developing web services using architectures such as REST and GRAPHQL.      and work in a microservices environment ",
+        "I currently work as a programmer analyst. participating from business process modeling to solution development.    I have experience in developing web services using architectures such as REST and GRAPHQL. And Technologies such as Java, Spring Boot, Node JS, Typescript.",
     },
     {
       company: "FASOREL SA",
