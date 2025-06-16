@@ -1,38 +1,37 @@
-import type React from "react";
-import { useState } from "react";
-import Navbar from "../components/NavBar";
-import Footer from "../components/Footer";
+"use client"
+
+import type React from "react"
+import { useState } from "react"
+import Navbar from "../components/NavBar"
+import Footer from "../components/Footer"
+import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Contact() {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [subject, setSubject] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const [name, setName] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [subject, setSubject] = useState<string>("")
+  const [message, setMessage] = useState<string>("")
+  const { t } = useLanguage()
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Sending email:", { name, email, subject, message });
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
-  };
+    e.preventDefault()
+    console.log("Sending email:", { name, email, subject, message })
+    setName("")
+    setEmail("")
+    setSubject("")
+    setMessage("")
+  }
 
   return (
     <>
       <Navbar />
       <div className="min-h-screen pt-24 bg-gray-100">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h1 className="text-4xl font-bold mb-8 text-blue-500">
-            Get In Touch
-          </h1>
+          <h1 className="text-4xl font-bold mb-8 text-blue-500">{t("contact.title")}</h1>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label
-                htmlFor="to"
-                className="block text-sm font-medium text-gray-700"
-              >
-                To
+              <label htmlFor="to" className="block text-sm font-medium text-gray-700">
+                {t("contact.to")}
               </label>
               <input
                 type="email"
@@ -44,11 +43,8 @@ export default function Contact() {
             </div>
 
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                {t("contact.name")}
               </label>
               <input
                 type="text"
@@ -60,11 +56,8 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Your Email
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                {t("contact.email")}
               </label>
               <input
                 type="email"
@@ -77,11 +70,8 @@ export default function Contact() {
             </div>
 
             <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Subject
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+                {t("contact.subject")}
               </label>
               <input
                 type="text"
@@ -93,11 +83,8 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Message
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                {t("contact.message")}
               </label>
               <textarea
                 id="message"
@@ -113,7 +100,7 @@ export default function Contact() {
                 type="submit"
                 className="px-6 py-3 text-sm font-medium text-white bg-blue-500 hover:bg-blue-700 rounded-md   "
               >
-                Enviar
+                {t("contact.send")}
               </button>
             </div>
           </form>
@@ -121,5 +108,5 @@ export default function Contact() {
       </div>
       <Footer />;
     </>
-  );
+  )
 }

@@ -1,55 +1,52 @@
-import { motion } from "framer-motion";
+"use client"
+
+import { motion } from "framer-motion"
+import { useLanguage } from "../contexts/LanguageContext"
 export default function Projects() {
+  const { t } = useLanguage()
   const projects = [
     {
       name: "LOKUS APP",
-      description:
-        "Accounting management platform. with POS modules, fuel pump management, customers and others",
+      description: t("projects.lokus.description"),
       technologies: "Node.js, Express, React, Docker, PostGresSQL",
       link: "http://lokusapp.co.mz/",
     },
     {
       name: "PFUNA MAKWERO",
-      description:
-        "Donation application Where people and organizations can create solidarity campaigns on issues of disease, climate disasters, catastrophes and others",
+      description: t("projects.pfuna.description"),
       technologies: "Node.js, Express, React, Docker, PostGresSQL",
       link: "https://pfuna-makwero.vercel.app/",
     },
     {
       name: "GOVERNMENT PROJECTS MONITOR",
-      description: "Application for monitoring government projects, where public can comment and rate public projects",
+      description: t("projects.government.description"),
       technologies: "Node.js, Express, Next, TypeScript, PostGresSQL",
       link: "https://govprojectsmonitor-mz.vercel.app/",
     },
     {
       name: "THIKITHI APP",
-      description: "Application for selling Online Tickets easily and securely",
+      description: t("projects.thikithi.description"),
       technologies: "Node.js, React",
       link: "https://thikiti-app.vercel.app/",
     },
-
     {
       name: "SPRING CLOUD GATEWAY SERVICE",
-      description:
-        "Application that implements the spring cloud gateway library for routing services in a microservices environment. In which it has centralized configuration of retry, caching, rate limit and other mechanisms ",
+      description: t("projects.gateway.description"),
       technologies: "Java, Srpring boot",
       link: "https://github.com/IsraelMatusse/GATEWAY-SERVICE-SPRING",
     },
     {
       name: "NOTIFICATIONS SERVICE",
-      description:
-        "Service for issuing notifications to application users (email, SMS and others), developed to be used by applications in managing notifications where anyone who wants to join receives an API key and implements the application based on the documentation provided",
+      description: t("projects.notifications.description"),
       technologies: "Java, Spring boot",
       link: "https://github.com/IsraelMatusse/NOTIFICATIONS_SERVICE",
     },
-  ];
+  ]
 
   return (
     <section id="projects" className="py-2">
       <div className="container mx-auto px-4 ">
-        <h2 className="text-3xl font-bold mb-6 text-center text-vibrant-blue">
-          Featured Projects
-        </h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-vibrant-blue">{t("projects.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
@@ -61,23 +58,16 @@ export default function Projects() {
               className="bg-white p-6 rounded-lg shadow-lg"
             >
               <h3 className="text-xl font-semibold text-vibrant-blue">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-vibrant-blue"
-                >
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:text-vibrant-blue">
                   {project.name}
                 </a>
               </h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
-              <p className="text-sm text-vibrant-purple">
-                {project.technologies}
-              </p>
+              <p className="text-sm text-vibrant-purple">{project.technologies}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

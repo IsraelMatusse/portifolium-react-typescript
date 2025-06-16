@@ -1,26 +1,28 @@
-import { motion } from "framer-motion";
+"use client"
+
+import { motion } from "framer-motion"
+import { useLanguage } from "../contexts/LanguageContext"
 
 export default function Education() {
+  const { t } = useLanguage()
+
   const educations = [
     {
-      degree: "Degree in Engineering of Technologies and Information Systems",
-      institution: "Universidade Joaquim Chissano",
-      year: "2023",
+      degree: t("education.degree1"),
+      institution: t("education.institution1"),
+      year: t("education.year1"),
     },
     {
-      degree: "Industrial Maintenance Mechanics",
-      institution:
-        "Instituto de Formação Profissional e Estudos laborais Alberto Cassimo",
-      year: "2018",
+      degree: t("education.degree2"),
+      institution: t("education.institution2"),
+      year: t("education.year2"),
     },
-  ];
+  ]
 
   return (
     <section id="projects" className="py-2">
       <div className="container mx-auto px-4 ">
-        <h2 className="text-3xl font-bold mb-6 text-center text-vibrant-blue">
-          Academic Formation
-        </h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-vibrant-blue">{t("education.title")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {educations.map((education, index) => (
             <motion.div
@@ -31,9 +33,7 @@ export default function Education() {
               whileHover={{ scale: 1.05 }}
               className="bg-white p-6 rounded-lg shadow-lg"
             >
-              <h3 className="text-xl font-semibold mb-2 text-vibrant-blue">
-                {education.institution}
-              </h3>
+              <h3 className="text-xl font-semibold mb-2 text-vibrant-blue">{education.institution}</h3>
               <p className="text-gray-600 mb-4">{education.degree}</p>
               <p className="text-sm text-vibrant-purple">{education.year}</p>
             </motion.div>
@@ -41,5 +41,5 @@ export default function Education() {
         </div>
       </div>
     </section>
-  );
+  )
 }
