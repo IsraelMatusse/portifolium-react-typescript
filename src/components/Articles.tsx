@@ -16,7 +16,7 @@ export default function Articles() {
 
       {
       title: t("articles.internationalization.title"),
-      excerpt: t("articles.internationalization.excerptt"),
+      excerpt: t("articles.internationalization.excerpt"),
       link: "https://medium.com/@israelmathusse451/software-internationalization-and-localization-why-and-how-to-apply-d8d2f3bcedc8",
     },
 
