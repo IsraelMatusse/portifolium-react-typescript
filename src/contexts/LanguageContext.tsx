@@ -15,7 +15,6 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
-    // Navigation
     "nav.home": "Home",
     "nav.experience": "Experience",
     "nav.skills": "Skills",
@@ -24,21 +23,18 @@ const translations = {
     "nav.articles": "Articles",
     "nav.contact": "Contact",
 
-    // Hero Section
     "hero.greeting": "Hello World",
     "hero.name": "I'm Israel Matusse",
     "hero.description":
       "A young man with a passion for solving everyday problems and driving improvements in the quality of life through technology. I have a curious and innovative mindset, always seeking creative and disruptive approaches to complex challenges. I am constantly looking for new opportunities for learning and professional growth, motivated to become a visionary leader in the technology sector. I am able to work collaboratively in multidisciplinary teams, encouraging the exchange of ideas and driving transformative solutions. I have experience using technologies such as java, spring boot, typescript, node js, react, relational and non-relational databases, application redesign and business process modeling.",
     "hero.cta": "Get In Touch",
 
-    // About Section
     "about.title": "About Me",
     "about.description1":
       "My name is Israel Mateus Matusse. I'm 23 years old and passionate about software development. My journey as a developer started at the university, where I learned the basics of programming and was exposed to different programming languages, such as C#, Java, JavaScript, PHP, CSS, and HTML. I graduated in Engineering of Technologies and Information Systems.",
     "about.description2":
       "In 2021 I transitioned into the professional sphere, where I am currently engaged in the dynamic field of technology. As a Programmer Analyst, I primarily focus on backend development, leveraging technologies such as Spring Boot, Node Js, react Js and many others. My journey in the tech industry has been marked by continuous learning, and my dedication to mastering new skills and technologies remains unwavering. My commitment to growth and innovation is a driving force as I navigate the ever-evolving landscape of software development.",
 
-    // Experience Section
     "experience.title": "Professional Experience",
     "experience.netline.role": "Programmer Analyst",
     "experience.netline.period": "February 2023 - Present",
@@ -61,10 +57,8 @@ const translations = {
     "experience.cfm.description":
       "I was an industrial mechanics intern in the general workshops of CFM Maputo. in the departments of workshop conservation and general production.",
 
-    // Skills Section
     "skills.title": "My Skills",
 
-    // Education Section
     "education.title": "Academic Formation",
     "education.degree1": "Degree in Engineering of Technologies and Information Systems",
     "education.institution1": "Universidade Joaquim Chissano",
@@ -100,6 +94,11 @@ const translations = {
     "articles.bpm.excerpt":
       "By integrating BPM with knowledge management, organizations can unlock the full potential of their collective expertise, driving innovation and competitiveness.",
     "articles.readMore": "Read on Medium",
+
+    "articles.internationalization.title": "Software Internationalization and Localization: Why it Matters and How to Implement it",
+    "articles.internationalization.excerpt":
+      "Internationalization and localization are essential for creating software that can be used by people all over the world. This article explains why these processes are important and how to implement them effectively.",
+
 
     // Contact Section
     "contact.title": "Get In Touch",
@@ -140,14 +139,12 @@ const translations = {
       "Um jovem apaixonado por resolver problemas do dia a dia e impulsionar melhorias na qualidade de vida através da tecnologia. Tenho uma mentalidade curiosa e inovadora, sempre buscando abordagens criativas e disruptivas para desafios complexos. Estou constantemente procurando novas oportunidades de aprendizado e crescimento profissional, motivado a me tornar um líder visionário no setor de tecnologia. Sou capaz de trabalhar colaborativamente em equipes multidisciplinares, incentivando a troca de ideias e impulsionando soluções transformadoras. Tenho experiência usando tecnologias como java, spring boot, typescript, node js, react, bancos de dados relacionais e não relacionais, redesign de aplicações e modelagem de processos de negócio.",
     "hero.cta": "Entre em Contato",
 
-    // About Section
     "about.title": "Sobre Mim",
     "about.description1":
       "Meu nome é Israel Mateus Matusse. Tenho 23 anos e sou apaixonado por desenvolvimento de software. Minha jornada como desenvolvedor começou na universidade, onde aprendi os fundamentos da programação e fui exposto a diferentes linguagens de programação, como C#, Java, JavaScript, PHP, CSS e HTML. Me formei em Engenharia de Tecnologias e Sistemas de Informação.",
     "about.description2":
       "Em 2021 fiz a transição para a esfera profissional, onde atualmente estou envolvido no campo dinâmico da tecnologia. Como Analista Programador, foco principalmente no desenvolvimento backend, aproveitando tecnologias como Spring Boot, Node Js, React Js e muitas outras. Minha jornada na indústria de tecnologia tem sido marcada pelo aprendizado contínuo, e minha dedicação em dominar novas habilidades e tecnologias permanece inabalável. Meu compromisso com o crescimento e inovação é uma força motriz enquanto navego pelo cenário em constante evolução do desenvolvimento de software.",
 
-    // Experience Section
     "experience.title": "Experiência Profissional",
     "experience.netline.role": "Analista Programador",
     "experience.netline.period": "Fevereiro 2023 - Presente",
@@ -170,10 +167,8 @@ const translations = {
     "experience.cfm.description":
       "Fui estagiário de mecânica industrial nas oficinas gerais da CFM Maputo. nos departamentos de conservação de oficina e produção geral.",
 
-    // Skills Section
     "skills.title": "Minhas Habilidades",
 
-    // Education Section
     "education.title": "Formação Acadêmica",
     "education.degree1": "Licenciatura em Engenharia de Tecnologias e Sistemas de Informação",
     "education.institution1": "Universidade Joaquim Chissano",
@@ -228,7 +223,6 @@ const translations = {
     "footer.location": "Localização",
     "footer.locationValue": "Maputo, Moçambique",
     "footer.phone": "Telefone",
-    "footer.phoneValue": "+258 84 123 4567",
     "footer.description":
       "Desenvolvedor de software apaixonado focado em criar soluções inovadoras e impulsionar o avanço tecnológico.",
   },

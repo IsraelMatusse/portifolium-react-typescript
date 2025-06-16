@@ -1,6 +1,6 @@
 "use client"
 
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { useLanguage } from "../contexts/LanguageContext"
 

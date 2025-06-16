@@ -13,6 +13,13 @@ export default function Articles() {
   const { t } = useLanguage()
 
   const articles: Article[] = [
+
+      {
+      title: t("articles.internationalization.title"),
+      excerpt: t("articles.internationalization.excerptt"),
+      link: "https://medium.com/@israelmathusse451/software-internationalization-and-localization-why-and-how-to-apply-d8d2f3bcedc8",
+    },
+
     {
       title: t("articles.migration.title"),
       excerpt: t("articles.migration.excerpt"),

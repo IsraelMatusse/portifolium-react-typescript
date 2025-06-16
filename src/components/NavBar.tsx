@@ -15,7 +15,7 @@ type NavLinksProps = {
 }
 
 const NavLinks = ({ pathname, setIsOpen }: NavLinksProps) => {
-  const ScrollLinkComponent = ScrollLink as unknown
+  const ScrollLinkComponent = ScrollLink as any
   const { t } = useLanguage()
 
   return (
@@ -105,7 +105,6 @@ export default function Navbar() {
   const location = useLocation()
   const pathname = location.pathname
   const [isOpen, setIsOpen] = useState(false)
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4">
