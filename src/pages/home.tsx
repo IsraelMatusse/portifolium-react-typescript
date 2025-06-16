@@ -6,7 +6,6 @@ import Projects from "../components/Projects"
 import Navbar from "../components/NavBar"
 import Footer from "../components/Footer"
 import Education from "../components/Education"
-import { Link } from "react-router-dom"
 import { Skills } from "../components/Skills"
 import { useLanguage } from "../contexts/LanguageContext"
 
@@ -23,12 +22,7 @@ export default function Home() {
               {t("hero.greeting")} <br /> {t("hero.name")}
             </h1>
             <p className="text-xl mb-6">{t("hero.description")}</p>
-            <Link
-              to="/contact"
-              className="bg-white text-vibrant-purple px-6 py-2 rounded-full font-semibold inline-block"
-            >
-              {t("hero.cta")}
-            </Link>
+           
           </motion.div>
         </div>
       </section>

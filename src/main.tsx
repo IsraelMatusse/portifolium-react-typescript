@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import React from "react"
 import Home from "./pages/home"
 import ArticlesPage from "./pages/ArticlesPage"
-import Contact from "./pages/Contact"
 import { LanguageProvider } from "./contexts/LanguageContext"
 
 const router = createBrowserRouter([
@@ -15,10 +14,6 @@ const router = createBrowserRouter([
   {
     path: "/articles",
     element: <ArticlesPage />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
   },
 ])
 

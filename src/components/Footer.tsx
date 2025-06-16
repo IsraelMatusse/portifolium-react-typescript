@@ -34,11 +34,6 @@ export default function Footer() {
                   {t("nav.articles")}
                 </Link>
               </li>
-              <li>
-                <Link to="/contact" className="text-gray-300 hover:text-vibrant-blue transition-colors text-sm">
-                  {t("nav.contact")}
-                </Link>
-              </li>
             </ul>
           </div>
 
