@@ -49,6 +49,7 @@ type TranslationKeys =
   | "projects.pfuna.description"
   | "projects.government.description"
   | "projects.thikithi.description"
+  | "projects.yourqrcode.description"
   | "projects.gateway.description"
   | "projects.notifications.description"
   | "articles.title"
@@ -158,6 +159,7 @@ const translations = {
     "projects.government.description":
       "Application for monitoring government projects, where public can comment and rate public projects",
     "projects.thikithi.description": "Application for selling Online Tickets easily and securely",
+    "projects.yourqrcode.description": "Application for generating QR Codes easily and securely",
     "projects.gateway.description":
       "Application that implements the spring cloud gateway library for routing services in a microservices environment. In which it has centralized configuration of retry, caching, rate limit and other mechanisms",
     "projects.notifications.description":
@@ -270,6 +272,7 @@ const translations = {
     "projects.government.description":
       "Aplicação para monitoramento de projetos governamentais, onde o público pode comentar e avaliar projetos públicos",
     "projects.thikithi.description": "Aplicação para venda de Bilhetes Online de forma fácil e segura",
+    "projects.yourqrcode.description": "Aplicação para gerar Códigos QR de forma fácil e segura",
     "projects.gateway.description":
       "Aplicação que implementa a biblioteca spring cloud gateway para roteamento de serviços em ambiente de microsserviços. Na qual possui configuração centralizada de retry, caching, rate limit e outros mecanismos",
     "projects.notifications.description":

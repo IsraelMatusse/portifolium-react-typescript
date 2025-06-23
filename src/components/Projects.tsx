@@ -24,10 +24,10 @@ export default function Projects() {
       link: "https://govprojectsmonitor-mz.vercel.app/",
     },
     {
-      name: "THIKITHI APP",
-      description: t("projects.thikithi.description"),
-      technologies: "Node.js, React",
-      link: "https://thikiti-app.vercel.app/",
+      name: "YOUR QRCODE",
+      description: t("projects.yourqrcode.description"),
+      technologies: "Node.js, NEXT, TypeScript",
+      link: "https://yourqrcode.vercel.app/",
     },
     {
       name: "SPRING CLOUD GATEWAY SERVICE",
