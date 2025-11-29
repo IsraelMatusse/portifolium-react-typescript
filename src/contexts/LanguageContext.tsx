@@ -94,7 +94,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-const translations = {
+const translations: Record<Language, Partial<Record<TranslationKeys, string>>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
