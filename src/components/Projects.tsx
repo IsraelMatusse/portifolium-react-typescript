@@ -6,42 +6,42 @@ export default function Projects() {
   const { t } = useLanguage()
   const projects = [
     {
-      name: "LOKUS APP",
-      description: t("projects.lokus.description"),
-      technologies: "Node.js, Express, React, Docker, PostGresSQL",
-      link: "http://lokusapp.co.mz/",
+      name: 'MOZ ONLINE',
+      description: t('projects.mozonline.description'),
+      technologies: 'Node.js, Express, NEXT, Docker, PostGresSQL',
+      link: 'https://servicos-moz.israelmatusse.com/',
     },
     {
-      name: "PFUNA MAKWERO",
-      description: t("projects.pfuna.description"),
-      technologies: "Node.js, Express, React, Docker, PostGresSQL",
-      link: "https://pfuna-makwero.vercel.app/",
+      name: 'METICAL CONVERTER',
+      description: t('projects.meticalconverter.description'),
+      technologies: 'Java, Spring Boot, NEXT, Docker, PostGresSQL',
+      link: 'https://docs.metical-converter.israelmatusse.com/',
     },
     {
-      name: "GOVERNMENT PROJECTS MONITOR",
-      description: t("projects.government.description"),
-      technologies: "Node.js, Express, Next, TypeScript, PostGresSQL",
-      link: "https://govprojectsmonitor-mz.vercel.app/",
+      name: 'LOKUS APP',
+      description: t('projects.lokus.description'),
+      technologies: 'Node.js, Express, React, Docker, PostGresSQL',
+      link: 'http://lokusapp.co.mz/',
     },
     {
-      name: "YOUR QRCODE",
-      description: t("projects.yourqrcode.description"),
-      technologies: "Node.js, NEXT, TypeScript",
-      link: "https://yourqrcode.vercel.app/",
+      name: 'YOUR QRCODE',
+      description: t('projects.yourqrcode.description'),
+      technologies: 'Node.js, NEXT, TypeScript',
+      link: 'https://yourqrcode.israelmatusse.com/',
     },
     {
-      name: "SPRING CLOUD GATEWAY SERVICE",
-      description: t("projects.gateway.description"),
-      technologies: "Java, Srpring boot",
-      link: "https://github.com/IsraelMatusse/GATEWAY-SERVICE-SPRING",
+      name: 'PFUNA MAKWERO',
+      description: t('projects.pfuna.description'),
+      technologies: 'Node.js, Express, React, Docker, PostGresSQL',
+      link: 'https://pfuna-makwero.vercel.app/',
     },
     {
-      name: "NOTIFICATIONS SERVICE",
-      description: t("projects.notifications.description"),
-      technologies: "Java, Spring boot",
-      link: "https://github.com/IsraelMatusse/NOTIFICATIONS_SERVICE",
+      name: 'GOVERNMENT PROJECTS MONITOR',
+      description: t('projects.government.description'),
+      technologies: 'Node.js, Express, Next, TypeScript, PostGresSQL',
+      link: 'https://govprojectsmonitor-mz.vercel.app/',
     },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-2">

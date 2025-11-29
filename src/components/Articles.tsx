@@ -13,29 +13,34 @@ export default function Articles() {
   const { t } = useLanguage()
 
   const articles: Article[] = [
+    {
+      title: t('articles.multitenancy.title'),
+      excerpt: t('articles.multitenancy.excerpt'),
+      link: 'https://medium.com/@israelmathusse451/aplica%C3%A7%C3%B5es-multi-tenant-como-construir-e-t%C3%A9cnicas-para-lidar-com-elas-e991137992d9',
+    },
 
-      {
-      title: t("articles.internationalization.title"),
-      excerpt: t("articles.internationalization.excerpt"),
-      link: "https://medium.com/@israelmathusse451/software-internationalization-and-localization-why-and-how-to-apply-d8d2f3bcedc8",
+    {
+      title: t('articles.internationalization.title'),
+      excerpt: t('articles.internationalization.excerpt'),
+      link: 'https://medium.com/@israelmathusse451/software-internationalization-and-localization-why-and-how-to-apply-d8d2f3bcedc8',
     },
 
     {
-      title: t("articles.migration.title"),
-      excerpt: t("articles.migration.excerpt"),
-      link: "https://medium.com/@israelmathusse451/migrating-a-monolithic-application-to-microservices-using-the-strangler-fig-pattern-and-spring-71cfca98d047",
+      title: t('articles.migration.title'),
+      excerpt: t('articles.migration.excerpt'),
+      link: 'https://medium.com/@israelmathusse451/migrating-a-monolithic-application-to-microservices-using-the-strangler-fig-pattern-and-spring-71cfca98d047',
     },
     {
-      title: t("articles.validators.title"),
-      excerpt: t("articles.validators.excerpt"),
-      link: "https://medium.com/@israelmathusse451/ensuring-clean-data-custom-validators-in-spring-boot-30b0aea28033",
+      title: t('articles.validators.title'),
+      excerpt: t('articles.validators.excerpt'),
+      link: 'https://medium.com/@israelmathusse451/ensuring-clean-data-custom-validators-in-spring-boot-30b0aea28033',
     },
     {
-      title: t("articles.bpm.title"),
-      excerpt: t("articles.bpm.excerpt"),
-      link: "https://medium.com/@israelmathusse451/leveraging-bpm-for-effective-knowledge-management-890d394147d1",
+      title: t('articles.bpm.title'),
+      excerpt: t('articles.bpm.excerpt'),
+      link: 'https://medium.com/@israelmathusse451/leveraging-bpm-for-effective-knowledge-management-890d394147d1',
     },
-  ]
+  ];
 
   return (
     <div className="bg-gray-100 text-black py-20">
