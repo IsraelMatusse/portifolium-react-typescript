@@ -2,15 +2,18 @@
 
 import { motion } from "framer-motion"
 import { useLanguage } from "../contexts/LanguageContext"
+import { useArticles } from '../hooks/use-article';
 
 interface Article {
-  title: string
-  excerpt: string
-  link: string
+  title: string;
+  excerpt: string;
+  link: string;
 }
 
 export default function Articles() {
-  const { t } = useLanguage()
+  const { data: articlesResponse, isLoading } = useArticles();
+   console.log(articlesResponse, isLoading);
+       const { t } = useLanguage();
 
   const articles: Article[] = [
     {
@@ -45,8 +48,14 @@ export default function Articles() {
   return (
     <div className="bg-gray-100 text-black py-20">
       <div className="container mx-auto px-4">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-4xl font-bold mb-6 text-center text-vibrant-blue">{t("articles.title")}</h1>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl font-bold mb-6 text-center text-vibrant-blue">
+            {t('articles.title')}
+          </h1>
           <div className="grid gap-6">
             {articles.map((article, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
@@ -58,7 +67,7 @@ export default function Articles() {
                   rel="noopener noreferrer"
                   className="text-vibrant-purple hover:underline"
                 >
-                  {t("articles.readMore")}
+                  {t('articles.readMore')}
                 </a>
               </div>
             ))}
@@ -66,5 +75,5 @@ export default function Articles() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
