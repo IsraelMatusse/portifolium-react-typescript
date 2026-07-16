@@ -1,34 +1,42 @@
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+"use client"
+
+import { motion } from "framer-motion"
+import { Code2, GraduationCap } from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
+import SectionHeading from "./SectionHeading"
 
 export default function About() {
-  return (
-    <section id="about" className="py-10">
-      <Card>
-        <CardHeader>
-          <CardTitle>Sobre Mim</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>
-            My name is Israel Mateus Matusse. I'm 23 years old and passionate about software
-            development. <br />
-            My journey as a developer started at the university, where I learned the basics of
-            programming and was exposed to different programming languages, <br />
-            such as C#, Java, JavaScript, PHP, CSS, and HTML. <br />I graduated in Engineering of
-            Technologies and Information Systems.
-          </p>
+  const { t } = useLanguage()
 
-          <p>
-            in 2021 I transitioned into the professional sphere, where I am currently engaged in the
-            dynamic field of technology. <br />
-            As a Programmer Analyst, I primarily focus on backend development, leveraging
-            technologies such as Spring Boot, Node Js, react Js and many others. <br />
-            My journey in the tech industry has been marked by continuous learning, and my
-            dedication to mastering new skills and technologies remains unwavering. <br />
-            My commitment to growth and innovation is a driving force as I navigate the
-            ever-evolving landscape of software development.
-          </p>
-        </CardContent>
-      </Card>
+  return (
+    <section id="about" className="py-20 md:py-28">
+      <div className="container">
+        <SectionHeading index="01" title={t("about.title")} />
+
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-7"
+          >
+            <GraduationCap className="mb-4 text-accent-400" size={26} />
+            <p className="leading-relaxed text-slate-300">{t("about.description1")}</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-7"
+          >
+            <Code2 className="mb-4 text-accent-400" size={26} />
+            <p className="leading-relaxed text-slate-300">{t("about.description2")}</p>
+          </motion.div>
+        </div>
+      </div>
     </section>
-  );
+  )
 }

@@ -1,103 +1,94 @@
 "use client"
 
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
+import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { useLanguage } from "../contexts/LanguageContext"
+import { SOCIAL_LINKS, CONTACT_EMAIL } from "../lib/social-links"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   const { t } = useLanguage()
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
+    <footer className="border-t border-white/5 bg-ink-950">
+      <div className="container py-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-vibrant-blue to-vibrant-purple bg-clip-text text-transparent">
-              Israel Matusse
-            </h3>
-            <p className="text-gray-300 text-sm leading-relaxed">{t("footer.description")}</p>
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-sky-500 text-xs font-bold text-ink-950">
+                IM
+              </span>
+              <h3 className="text-lg font-semibold text-slate-100">Israel Matusse</h3>
+            </div>
+            <p className="text-sm leading-relaxed text-slate-400">{t("footer.description")}</p>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-vibrant-blue">{t("footer.quickLinks")}</h4>
-            <ul className="space-y-2">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-200">
+              {t("footer.quickLinks")}
+            </h4>
+            <ul className="space-y-2.5">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-vibrant-blue transition-colors text-sm">
+                <Link to="/" className="text-sm text-slate-400 transition-colors hover:text-accent-300">
                   {t("nav.home")}
                 </Link>
               </li>
               <li>
-                <Link to="/articles" className="text-gray-300 hover:text-vibrant-blue transition-colors text-sm">
+                <Link
+                  to="/articles"
+                  className="text-sm text-slate-400 transition-colors hover:text-accent-300"
+                >
                   {t("nav.articles")}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Information */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-vibrant-blue">{t("footer.contact")}</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-200">
+              {t("footer.contact")}
+            </h4>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <FaEnvelope className="text-vibrant-purple" size={16} />
-                <span className="text-gray-300 text-sm">dev.matusse@gmail.com</span>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="flex items-center gap-3 text-sm text-slate-400 transition-colors hover:text-accent-300"
+              >
+                <FaEnvelope className="text-accent-400" size={14} />
+                {CONTACT_EMAIL}
+              </a>
+              <div className="flex items-center gap-3 text-sm text-slate-400">
+                <FaMapMarkerAlt className="text-accent-400" size={14} />
+                {t("footer.locationValue")}
               </div>
-              <div className="flex items-center space-x-3">
-                <FaMapMarkerAlt className="text-vibrant-purple" size={16} />
-                <span className="text-gray-300 text-sm">{t("footer.locationValue")}</span>
-              </div>
-    
             </div>
           </div>
 
-          {/* Social Media */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-vibrant-blue">{t("footer.connect")}</h4>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/IsraelMatusse"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-3 rounded-full hover:bg-vibrant-blue transition-colors duration-300"
-                aria-label="GitHub"
-              >
-                <FaGithub size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/israel-matusse-0828a3239/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-3 rounded-full hover:bg-vibrant-blue transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin size={20} />
-              </a>
-              <a
-                href="https://twitter.com/Israel_matusse"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-3 rounded-full hover:bg-vibrant-blue transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={20} />
-              </a>
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-200">
+              {t("footer.connect")}
+            </h4>
+            <div className="flex gap-3">
+              {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-slate-300 ring-1 ring-inset ring-white/10 transition-colors hover:bg-accent-400/10 hover:text-accent-300 hover:ring-accent-400/30"
+                  aria-label={name}
+                >
+                  <Icon size={17} />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Israel Matusse. {t("footer.rights")}
-            </p>
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-400 text-sm">Made with ❤️ in Mozambique</span>
-            </div>
-          </div>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
+          <p className="text-sm text-slate-500">
+            &copy; {currentYear} Israel Matusse. {t("footer.rights")}
+          </p>
+          <span className="text-sm text-slate-500">Made with ❤️ in Mozambique</span>
         </div>
       </div>
     </footer>

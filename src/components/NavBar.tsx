@@ -1,99 +1,86 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState, type ComponentType } from "react"
 import { useLocation } from "react-router-dom"
 import { Link as RouterLink } from "react-router-dom"
 import { Link as ScrollLink } from "react-scroll"
-import { motion } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X, Mail } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
 import LanguageSelector from "./LanguageSelector"
 
+const SECTIONS = [
+  { to: "about", key: "about.title" as const },
+  { to: "experience", key: "nav.experience" as const },
+  { to: "skills", key: "nav.skills" as const },
+  { to: "education", key: "nav.education" as const },
+  { to: "projects", key: "nav.projects" as const },
+]
+
 type NavLinksProps = {
   pathname: string
-  setIsOpen: (value: boolean) => void
+  onNavigate: () => void
+  variant?: "desktop" | "mobile"
 }
 
-const NavLinks = ({ pathname, setIsOpen }: NavLinksProps) => {
-  const ScrollLinkComponent = ScrollLink as any
+const ScrollLinkComponent = ScrollLink as unknown as ComponentType<Record<string, unknown>>
+
+const NavLinks = ({ pathname, onNavigate, variant = "desktop" }: NavLinksProps) => {
   const { t } = useLanguage()
+
+  const baseLink =
+    variant === "desktop"
+      ? "relative text-sm font-medium text-slate-300 transition-colors hover:text-accent-300"
+      : "block text-base font-medium text-slate-200 transition-colors hover:text-accent-300"
 
   return (
     <>
       <li>
         <RouterLink
-          className={`text-lg font-medium relative ${
-            pathname === "/" ? "text-vibrant-purple" : "text-gray-600 hover:text-vibrant-blue"
-          }`}
+          className={`${baseLink} ${pathname === "/" ? "text-accent-300" : ""}`}
           to={"/"}
-          onClick={() => setIsOpen(false)}
+          onClick={onNavigate}
         >
           {t("nav.home")}
-          {pathname === "/" && (
-            <motion.div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-vibrant-purple" layoutId="underline" />
+          {pathname === "/" && variant === "desktop" && (
+            <motion.span
+              className="absolute -bottom-1.5 left-0 right-0 h-px bg-accent-400"
+              layoutId="nav-underline"
+            />
           )}
         </RouterLink>
       </li>
 
-      <li>
-        <ScrollLinkComponent
-          to="experience"
-          smooth={true}
-          duration={500}
-          className="cursor-pointer text-lg font-medium text-gray-600 hover:text-vibrant-blue"
-          onClick={() => setIsOpen(false)}
-        >
-          {t("nav.experience")}
-        </ScrollLinkComponent>
-      </li>
-
-      <li>
-        <ScrollLinkComponent
-          to="skills"
-          smooth={true}
-          duration={500}
-          className="cursor-pointer text-lg font-medium text-gray-600 hover:text-vibrant-blue"
-          onClick={() => setIsOpen(false)}
-        >
-          {t("nav.skills")}
-        </ScrollLinkComponent>
-      </li>
-
-      <li>
-        <ScrollLinkComponent
-          to="education"
-          smooth={true}
-          duration={500}
-          className="cursor-pointer text-lg font-medium text-gray-600 hover:text-vibrant-blue"
-          onClick={() => setIsOpen(false)}
-        >
-          {t("nav.education")}
-        </ScrollLinkComponent>
-      </li>
-
-      <li>
-        <ScrollLinkComponent
-          to="projects"
-          smooth={true}
-          duration={500}
-          className="cursor-pointer text-lg font-medium text-gray-600 hover:text-vibrant-blue"
-          onClick={() => setIsOpen(false)}
-        >
-          {t("nav.projects")}
-        </ScrollLinkComponent>
-      </li>
+      {pathname === "/" &&
+        SECTIONS.map((section) => (
+          <li key={section.to}>
+            <ScrollLinkComponent
+              to={section.to}
+              smooth={true}
+              duration={500}
+              offset={-72}
+              spy={true}
+              activeClass="text-accent-300"
+              className={`${baseLink} cursor-pointer`}
+              onClick={onNavigate}
+            >
+              {t(section.key)}
+            </ScrollLinkComponent>
+          </li>
+        ))}
 
       <li>
         <RouterLink
-          className={`text-lg font-medium relative ${
-            pathname === "/articles" ? "text-vibrant-purple" : "text-gray-600 hover:text-vibrant-blue"
-          }`}
+          className={`${baseLink} ${pathname === "/articles" ? "text-accent-300" : ""}`}
           to={"/articles"}
-          onClick={() => setIsOpen(false)}
+          onClick={onNavigate}
         >
           {t("nav.articles")}
-          {pathname === "/articles" && (
-            <motion.div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-vibrant-purple" layoutId="underline" />
+          {pathname === "/articles" && variant === "desktop" && (
+            <motion.span
+              className="absolute -bottom-1.5 left-0 right-0 h-px bg-accent-400"
+              layoutId="nav-underline"
+            />
           )}
         </RouterLink>
       </li>
@@ -105,40 +92,87 @@ export default function Navbar() {
   const location = useLocation()
   const pathname = location.pathname
   const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-ink-900/80 backdrop-blur-lg border-b border-white/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="container">
         <div className="flex justify-between items-center py-4">
-          <RouterLink
-            className="text-3xl font-bold bg-gradient-to-r from-vibrant-blue to-vibrant-purple bg-clip-text text-transparent"
-            to={"/"}
-          >
-            Israel Matusse
+          <RouterLink className="group flex items-center gap-2.5" to={"/"}>
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-sky-500 text-sm font-bold text-ink-950 shadow-glow">
+              IM
+            </span>
+            <span className="text-lg font-semibold tracking-tight text-slate-100 group-hover:text-accent-300 transition-colors">
+              Israel Matusse
+            </span>
           </RouterLink>
 
-          <button className="md:hidden block text-gray-600 focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          <button
+            className="md:hidden text-slate-200 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
 
-          <ul className="hidden md:flex space-x-6">
-            <NavLinks pathname={pathname} setIsOpen={setIsOpen} />
-            <li>
+          <div className="hidden md:flex items-center gap-8">
+            <ul className="flex items-center gap-7">
+              <NavLinks pathname={pathname} onNavigate={() => setIsOpen(false)} />
+            </ul>
+            <div className="flex items-center gap-3 pl-2 border-l border-white/10">
               <LanguageSelector />
-            </li>
-          </ul>
+              <a
+                href="mailto:dev.matusse@gmail.com"
+                className="inline-flex items-center gap-1.5 rounded-full bg-accent-400/10 px-4 py-2 text-sm font-medium text-accent-300 ring-1 ring-inset ring-accent-400/30 transition-colors hover:bg-accent-400/20"
+              >
+                <Mail size={15} />
+                {t("nav.contact")}
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
 
+      <AnimatePresence>
         {isOpen && (
-          <div className="md:hidden bg-white shadow-md absolute left-0 right-0 top-[70px] z-40 p-4">
-            <ul className="flex flex-col space-y-4">
-              <NavLinks pathname={pathname} setIsOpen={setIsOpen} />
-              <li>
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden overflow-hidden border-t border-white/5 bg-ink-900/95 backdrop-blur-lg"
+          >
+            <ul className="container flex flex-col gap-5 py-6">
+              <NavLinks pathname={pathname} onNavigate={() => setIsOpen(false)} variant="mobile" />
+              <li className="flex items-center justify-between pt-2 border-t border-white/5">
                 <LanguageSelector />
+                <a
+                  href="mailto:dev.matusse@gmail.com"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-accent-400/10 px-4 py-2 text-sm font-medium text-accent-300 ring-1 ring-inset ring-accent-400/30"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Mail size={15} />
+                  {t("nav.contact")}
+                </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </nav>
   )
 }

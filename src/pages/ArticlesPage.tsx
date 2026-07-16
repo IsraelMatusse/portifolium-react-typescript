@@ -3,9 +3,8 @@ import Footer from '../components/Footer';
 import Navbar from '../components/NavBar';
 
 export default function ArticlesPage() {
-
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen bg-background pt-24">
       <Navbar />
       <Articles />
       <Footer />
