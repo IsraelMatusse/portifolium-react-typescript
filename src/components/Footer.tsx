@@ -20,17 +20,20 @@ export default function Footer() {
               </span>
               <h3 className="text-lg font-semibold text-slate-100">Israel Matusse</h3>
             </div>
-            <p className="text-sm leading-relaxed text-slate-400">{t("footer.description")}</p>
+            <p className="text-sm leading-relaxed text-slate-400">{t('footer.description')}</p>
           </div>
 
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-200">
-              {t("footer.quickLinks")}
+              {t('footer.quickLinks')}
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/" className="text-sm text-slate-400 transition-colors hover:text-accent-300">
-                  {t("nav.home")}
+                <Link
+                  to="/"
+                  className="text-sm text-slate-400 transition-colors hover:text-accent-300"
+                >
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
@@ -38,7 +41,7 @@ export default function Footer() {
                   to="/articles"
                   className="text-sm text-slate-400 transition-colors hover:text-accent-300"
                 >
-                  {t("nav.articles")}
+                  {t('nav.articles')}
                 </Link>
               </li>
             </ul>
@@ -46,7 +49,7 @@ export default function Footer() {
 
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-200">
-              {t("footer.contact")}
+              {t('footer.contact')}
             </h4>
             <div className="space-y-3">
               <a
@@ -58,14 +61,14 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-3 text-sm text-slate-400">
                 <FaMapMarkerAlt className="text-accent-400" size={14} />
-                {t("footer.locationValue")}
+                {t('footer.locationValue')}
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-200">
-              {t("footer.connect")}
+              {t('footer.connect')}
             </h4>
             <div className="flex gap-3">
               {SOCIAL_LINKS.map(({ name, href, icon: Icon }) => (
@@ -86,11 +89,10 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
           <p className="text-sm text-slate-500">
-            &copy; {currentYear} Israel Matusse. {t("footer.rights")}
+            &copy; {currentYear} Israel Matusse. {t('footer.rights')}
           </p>
-          <span className="text-sm text-slate-500">Made with ❤️ in Mozambique</span>
         </div>
       </div>
     </footer>
-  )
+  );
 }

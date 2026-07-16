@@ -115,13 +115,13 @@ const translations: Record<Language, Partial<Record<TranslationKeys, string>>> =
     // About Section
     'about.title': 'About Me',
     'about.description1':
-      "My name is Israel Mateus Matusse. I'm 23 years old and passionate about software development. My journey as a developer started at the university, where I learned the basics of programming and was exposed to different programming languages, such as C#, Java, JavaScript, PHP, CSS, and HTML. I graduated in Engineering of Technologies and Information Systems.",
+      "My name is Israel Mateus Matusse. I'm 25 years old and passionate about software development. My journey as a developer started at the university, where I learned the basics of programming and was exposed to different programming languages, such as C#, Java, JavaScript, PHP, CSS, and HTML. I graduated in Engineering of Technologies and Information Systems.",
     'about.description2':
       'In 2021 I transitioned into the professional sphere, where I am currently engaged in the dynamic field of technology. As a Programmer Analyst, I primarily focus on backend development, leveraging technologies such as Spring Boot, Node Js, react Js and many others. My journey in the tech industry has been marked by continuous learning, and my dedication to mastering new skills and technologies remains unwavering. My commitment to growth and innovation is a driving force as I navigate the ever-evolving landscape of software development.',
 
     // Experience Section
     'experience.title': 'Professional Experience',
-    'experience.netline.role': 'Programmer Analyst',
+    'experience.netline.role': 'Software Engineer',
     'experience.netline.period': 'February 2023 - Present',
     'experience.netline.description':
       'I currently work as a programmer analyst. participating from business process modeling to solution development. I have experience in developing web services using architectures such as REST and GRAPHQL. And Technologies such as Java, Spring Boot, Node JS, Typescript.',
@@ -238,13 +238,13 @@ const translations: Record<Language, Partial<Record<TranslationKeys, string>>> =
     // About Section
     'about.title': 'Sobre Mim',
     'about.description1':
-      'Meu nome é Israel Mateus Matusse. Tenho 23 anos e sou apaixonado por desenvolvimento de software. Minha jornada como desenvolvedor começou na universidade, onde aprendi os fundamentos da programação e fui exposto a diferentes linguagens de programação, como C#, Java, JavaScript, PHP, CSS e HTML. Me formei em Engenharia de Tecnologias e Sistemas de Informação.',
+      'Meu nome é Israel Mateus Matusse. Tenho 25 anos e sou apaixonado por desenvolvimento de software. Minha jornada como desenvolvedor começou na universidade, onde aprendi os fundamentos da programação e fui exposto a diferentes linguagens de programação, como C#, Java, JavaScript, PHP, CSS e HTML. Me formei em Engenharia de Tecnologias e Sistemas de Informação.',
     'about.description2':
       'Em 2021 fiz a transição para a esfera profissional, onde atualmente estou envolvido no campo dinâmico da tecnologia. Como Analista Programador, foco principalmente no desenvolvimento backend, aproveitando tecnologias como Spring Boot, Node Js, React Js e muitas outras. Minha jornada na indústria de tecnologia tem sido marcada pelo aprendizado contínuo, e minha dedicação em dominar novas habilidades e tecnologias permanece inabalável. Meu compromisso com o crescimento e inovação é uma força motriz enquanto navego pelo cenário em constante evolução do desenvolvimento de software.',
 
     // Experience Section
     'experience.title': 'Experiência Profissional',
-    'experience.netline.role': 'Analista Programador',
+    'experience.netline.role': 'Engenheiro de Software',
     'experience.netline.period': 'Fevereiro 2023 - Presente',
     'experience.netline.description':
       'Actualmente trabalho como analista programador. participando desde a modelagem de processos de negócio até o desenvolvimento de soluções. Tenho experiência no desenvolvimento de serviços web usando arquiteturas como REST e GRAPHQL. E tecnologias como Java, Spring Boot, Node JS, Typescript.',
